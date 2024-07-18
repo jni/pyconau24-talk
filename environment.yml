@@ -28,4 +28,4 @@ dependencies:
   - pip:
     - mrcfile
     - starfile
-    - git+https://github.com/jni/napari.git@fix-translate-bug
+      # - git+https://github.com/jni/napari.git@fix-translate-bug
