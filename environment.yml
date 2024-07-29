@@ -20,7 +20,7 @@ dependencies:
   - zarr
   - torchvision
   - napari-animation
-  - napari=0.5.0
+  - napari=0.5.1
   - napari-pdf-reader
   - napari-ome-zarr
   - zarpaint
