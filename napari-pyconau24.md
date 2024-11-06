@@ -245,9 +245,9 @@ viewer, tomo_layer = napari.imshow(
 
 +++
 
-![sphere fitting](https://teamtomo.org/_images/hiv-oversampling1.png)
+![sphere fitting](https://teamtomo.org/teamtomo-site-archive/_images/hiv-oversampling1.png)
 
-from https://teamtomo.org/walkthroughs/EMPIAR-10164/geometrical-picking.html
+from https://teamtomo.org/teamtomo-site-archive/walkthroughs/EMPIAR-10164/geometrical-picking.html
 
 ```{code-cell} ipython3
 import starfile
@@ -297,9 +297,9 @@ vec_layer = viewer.add_vectors(
         )
 ```
 
-![reconstruction](https://teamtomo.org/_images/result2.png)
+![reconstruction](https://teamtomo.org/teamtomo-site-archive/_images/result2.png)
 
-from https://teamtomo.org/walkthroughs/EMPIAR-10164/m.html
+from https://teamtomo.org/teamtomo-site-archive/walkthroughs/EMPIAR-10164/m.html
 
 ```{code-cell} ipython3
 pts_data = pts_layer.data
