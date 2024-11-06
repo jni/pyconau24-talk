@@ -578,3 +578,12 @@ def set_layer_xz_shear(shear: float):
 
 dw = viewer.window.add_dock_widget(set_layer_xz_shear);
 ```
+
+### napari-segment-everthing
+
+```{code-cell} ipython3
+viewer = napari.Viewer()
+layer = viewer.open_sample('napari', 'eagle')
+widg = viewer.window.add_plugin_dock_widget('napari-segment-everything')
+```
+
