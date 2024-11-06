@@ -177,6 +177,7 @@ volumes = np.stack([
         ])
 
 viewer.add_image(volumes)
+viewer.dims.axis_labels = ['pc', 'pos', 'z', 'y', 'x']
 ```
 
 ## 2 – a *layered* viewer
