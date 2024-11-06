@@ -1,8 +1,8 @@
-name: fit
+name: pyconau
 channels:
   - conda-forge
 dependencies:
-  - python=3.12
+  - python=3.11
   - pip
   - jupyterlab
   - jupytext
@@ -20,12 +20,15 @@ dependencies:
   - zarr
   - torchvision
   - napari-animation
-  - napari=0.5.1
+  - napari=0.5.4
   - napari-pdf-reader
   - napari-ome-zarr
   - zarpaint
   - affinder
+  - napari-skimage
+  - napari-threedee
   - pip:
     - mrcfile
     - starfile
-      # - git+https://github.com/jni/napari.git@fix-translate-bug
+    # - python-rtmidi
+    - napari-segment-everything
