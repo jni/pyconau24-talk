@@ -1,3 +1,10 @@
+[build-system]
+requires = ["setuptools>=42.0.0", "wheel", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
 [project]
 name = "napari-filter-threshold"
 version = "0.0.1"
@@ -11,20 +18,14 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
+    "Framework :: napari",
 ]
 
 [project.entry-points."napari.manifest"]
 napari-filter-threshold = "napari_filter_threshold:napari.yaml"
 
-[build-system]
-requires = ["setuptools>=42.0.0", "wheel", "setuptools_scm"]
-build-backend = "setuptools.build_meta"
-
 [tool.setuptools]
 include-package-data = true
-
-[tool.setuptools.packages.find]
-where = ["src"]
 
 [tool.setuptools.package-data]
 "*" = ["*.yaml"]
