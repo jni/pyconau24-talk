@@ -555,3 +555,53 @@ layer = viewer.open_sample('napari', 'eagle')
 widg = viewer.window.add_plugin_dock_widget('napari-segment-everything')
 ```
 
+### a simple widget
+
+```{code-cell} ipython3
+import napari
+import numpy as np
+
+from magicgui import magicgui
+from skimage.morphology import disk
+from skimage.filters.rank import mean
+
+@magicgui(
+    auto_call=True,
+    threshold={"widget_type": "FloatSlider", "max": 1}
+)
+def filter_and_threshold(
+    layer: 'napari.layers.Image',
+    disk_size: int,
+    threshold: float
+) -> 'napari.types.LayerDataTuple':
+    
+    layer_tuples = []
+    filtered_image = layer.data
+    image_meta = {}
+    
+    if disk_size > 0:
+        filter_disk = disk(disk_size)
+        filtered_image = mean(layer.data, footprint=filter_disk)
+        image_meta['name'] = 'Filtered'
+        image_meta['visible'] = True
+        layer_tuples.append(
+            (filtered_image, image_meta, 'image')
+        )
+        
+    if threshold > 0:
+        scaled_threshold = threshold * np.max(layer.data)
+        thresholded_labels = (filtered_image > scaled_threshold).astype(np.uint8)
+        labels_meta = {
+            'name': 'Thresholded',
+            'visible': True
+        }
+        image_meta['visible'] = False
+        layer_tuples.append(
+            (thresholded_labels, labels_meta, 'labels')
+        )
+    return layer_tuples
+
+viewer = napari.Viewer()
+viewer.open_sample('napari', 'human_mitosis')
+viewer.window.add_dock_widget(filter_and_threshold)
+```
