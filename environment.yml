@@ -27,6 +27,7 @@ dependencies:
   - affinder
   - napari-skimage
   - napari-threedee
+  - build
   - pip:
     - mrcfile
     - starfile
