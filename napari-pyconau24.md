@@ -212,8 +212,6 @@ centroids = np.array([p.centroid for p in measure.regionprops(segmented)])
 pts_layer = viewer.add_points(centroids, size=5)
 ```
 
-(TODO: We need a cool shapes layer demo)
-
 +++
 
 ### cryoET particle picking refinement
