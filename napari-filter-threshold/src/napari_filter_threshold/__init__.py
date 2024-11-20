@@ -1,3 +1,12 @@
+"""To generate a Python package with all the configuration for a napari plugin,
+use our copier template!
+
+https://github.com/napari/napari-plugin-template
+
+The template contains example implementations for different plugin contributions,
+as well as comments to help you get started.
+"""
+
 import numpy as np
 
 from magicgui import magic_factory
