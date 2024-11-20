@@ -593,11 +593,11 @@ widg = viewer.window.add_plugin_dock_widget('napari-segment-everything')
 import napari
 import numpy as np
 
-from magicgui import magicgui
+from magicgui import magic_factory
 from skimage.morphology import disk
 from skimage.filters.rank import mean
 
-@magicgui(
+@magic_factory(
     auto_call=True,
     threshold={"widget_type": "FloatSlider", "max": 1}
 )
@@ -635,5 +635,5 @@ def filter_and_threshold(
 
 viewer = napari.Viewer()
 viewer.open_sample('napari', 'human_mitosis')
-viewer.window.add_dock_widget(filter_and_threshold)
+viewer.window.add_dock_widget(filter_and_threshold())
 ```

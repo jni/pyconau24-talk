@@ -39,12 +39,3 @@ def filter_and_threshold(
             (thresholded_labels, labels_meta, 'labels')
         )
     return layer_tuples
-
-if __name__ == '__main__':
-    import napari
-
-    viewer = napari.Viewer()
-    viewer.open_sample('napari', 'human_mitosis')
-    viewer.window.add_dock_widget(filter_and_threshold())
-
-    napari.run()

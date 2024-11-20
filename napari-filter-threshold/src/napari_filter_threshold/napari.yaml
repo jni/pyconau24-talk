@@ -1,0 +1,10 @@
+name: napari-filter-threshold
+display_name: Filter & Threshold
+contributions:
+  commands:
+    - id: napari-filter-threshold.filter_threshold
+      title: Open Filter & Threshold Widget...
+      python_name: napari_filter_threshold:filter_and_threshold
+  widgets:
+    - command: napari-filter-threshold.filter_threshold
+      display_name: Filter & Threshold Images
