@@ -555,7 +555,8 @@ pdf_layer, = viewer.open(
 ```{code-cell} ipython3
 viewer = napari.Viewer()
 layer = viewer.open_sample('napari', 'eagle')
-widg = viewer.window.add_plugin_dock_widget('napari-segment-everything')
+dw, widg = viewer.window.add_plugin_dock_widget('napari-segment-everything')
+widg.process()
 ```
 
 ### a simple widget
