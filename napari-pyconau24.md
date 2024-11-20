@@ -547,39 +547,6 @@ viewer = napari.Viewer()
 pdf_layer, = viewer.open('data/project_jupyter.pdf', plugin='napari-pdf-reader')
 ```
 
-```{code-cell} ipython3
-from skimage import color
-
-pdfbw = color.rgb2gray(pdf_layer.data)
-pdf_layer.visible = False
-pdfbw_layer = viewer.add_image(
-        pdfbw[:, ::2, ::2],
-        scale=(2, 2, 2),
-        rendering='translucent',
-        )
-viewer.dims.ndisplay = 3
-```
-
-```{code-cell} ipython3
-from magicgui import magicgui, widgets
-
-@magicgui(
-        shear={'widget_type': widgets.FloatSlider,
-               'min': 0,
-               'max': pdfbw.shape[1]},
-        auto_call=True,
-        )
-def set_layer_xz_shear(shear: float):
-    pdfbw_layer.affine = [
-            [1    , 0, 0, 0],
-            [0    , 1, 0, 0],
-            [shear, 0, 1, 0],
-            [0    , 0, 0, 1],
-            ]
-
-dw = viewer.window.add_dock_widget(set_layer_xz_shear);
-```
-
 ### napari-segment-everthing
 
 ```{code-cell} ipython3
