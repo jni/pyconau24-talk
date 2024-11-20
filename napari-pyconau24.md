@@ -63,13 +63,10 @@ cells.shape
 ```
 
 ```{code-cell} ipython3
-data.cells3d?
-```
-
-```{code-cell} ipython3
 viewer, layer = napari.imshow(
         cells,
         channel_axis=1,
+        name=['membranes', 'nuclei'],
         scale=[0.29, 0.26, 0.26],
         )
 ```
@@ -211,8 +208,6 @@ label_layer = viewer.add_labels(segmented)
 centroids = np.array([p.centroid for p in measure.regionprops(segmented)])
 pts_layer = viewer.add_points(centroids, size=5)
 ```
-
-+++
 
 ### cryoET particle picking refinement
 

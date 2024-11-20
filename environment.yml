@@ -3,6 +3,7 @@ channels:
   - conda-forge
 dependencies:
   - python=3.11
+  - python-build
   - pip
   - jupyterlab
   - jupytext
@@ -27,7 +28,6 @@ dependencies:
   - affinder
   - napari-skimage
   - napari-threedee
-  - build
   - pip:
     - mrcfile
     - starfile
